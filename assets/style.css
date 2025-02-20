@@ -2,3 +2,19 @@
 @plugin "daisyui" {
     themes: light --default, dark --prefersdark;
 }
+
+.floating {
+    animation: floating 3s infinite;
+}
+
+@keyframes floating {
+    0% {
+        translate: 0 0;
+    }
+    50% {
+        translate: 0 -10px;
+    }
+    100% {
+        translate: 0 0;
+    }
+}

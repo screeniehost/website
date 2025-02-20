@@ -1,47 +1,20 @@
-const targetDate = new Date('2025-03-18T23:59:59').getTime();
+$(document).ready(function() {
+    const userPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const savedTheme = localStorage.getItem('theme') || (userPrefersDark ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', savedTheme);
 
-function updateCountdown() {
-    const now = new Date().getTime();
-    const distance = targetDate - now;
+    $('.theme-controller').prop('checked', savedTheme === 'dark');
+    $('.theme-controller').change(function() {
+        const selectedTheme = $(this).is(':checked') ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', selectedTheme);
+        localStorage.setItem('theme', selectedTheme); 
+    });
 
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    document.getElementById('days').innerText = days < 10 ? '0' + days : days;
-    document.getElementById('hours').innerText = hours < 10 ? '0' + hours : hours;
-    document.getElementById('minutes').innerText = minutes < 10 ? '0' + minutes : minutes;
-    document.getElementById('seconds').innerText = seconds < 10 ? '0' + seconds : seconds;
-
-    document.getElementById('days').style.setProperty('--value', days);
-    document.getElementById('hours').style.setProperty('--value', hours);
-    document.getElementById('minutes').style.setProperty('--value', minutes);
-    document.getElementById('seconds').style.setProperty('--value', seconds);
-}
-
-function toggleTheme() {
-    const currentTheme = document.documentElement.getAttribute('data-theme');
-    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-    document.documentElement.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-}
-
-function loadTheme() {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-        document.documentElement.setAttribute('data-theme', savedTheme);
-    } else {
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const defaultTheme = prefersDark ? 'dark' : 'light';
-        document.documentElement.setAttribute('data-theme', defaultTheme);
-    }
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-    loadTheme();
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
-
-    document.querySelector('.hamster').addEventListener('click', toggleTheme);
+    fetch('https://api.github.com/repos/screeniehost/screenie')
+        .then(response => response.json())
+        .then(data => {
+            const stargazersCount = data.stargazers_count;
+            $('.stargazers').text(stargazersCount);
+        })
+        .catch(error => console.error('Error fetching stargazers count:', error));
 });
