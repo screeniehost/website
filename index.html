@@ -6,6 +6,7 @@
     <title>screenie ~ sharing your screenshots and videos easily</title>
     <link rel="stylesheet" href="./assets/app.css">
     <script src="./assets/app.js" defer></script>
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
     <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon">
 </head>
 <body>
@@ -17,9 +18,6 @@
         </div>
         <div class="flex-none flex items-center gap-4">
           <div class="flex gap-2 items-center">
-            <!-- <a href="#" class="btn btn-soft btn-accent text-base-content">Install Guide</a>
-            <a href="#" class="btn btn-soft btn-primary text-base-content">Discord</a>
-            <a href="#" class="btn btn-soft btn-neutral text-base-content">GitHub</a> -->
             <label class="swap swap-rotate px-3">
               <input type="checkbox" class="theme-controller" />
               <svg class="swap-off h-7 w-7 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -35,22 +33,66 @@
   </div>
   <div class="container mx-auto p-4 min-h-screen flex items-center justify-center">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-      <div class="order-2 md:order-1 p-4 rounded-lg md:w-3/4 mx-auto flex flex-col items-center md:items-start text-center md:text-left">
-        <h2 class="text-7xl font-bold mb-4 bg-gradient-to-l from-[#74ebd5] to-[#acb6e5] bg-clip-text text-transparent break-words">screenie</h2>
-        <p class="text-4xl font-bold mb-4 text-base-content break-words">share your screenshots and videos easily</p>
-        <div class="mt-8 flex gap-5">
+      <div class="order-2 md:order-1 p-4 rounded-lg md:w-3/4 mx-auto flex flex-col items-center md:items-start text-center md:text-left" id="hero-text">
+        <h2 class="text-7xl sm:text-5xl font-bold mb-4 bg-gradient-to-l from-[#74ebd5] to-[#acb6e5] bg-clip-text text-transparent break-words drop-shadow-xl">screenie</h2>
+        <p class="text-4xl sm:text-2xl font-bold mb-4 text-base-content break-words">share your screenshots and videos easily</p>
+        <div class="mt-8 flex flex-col lg:flex-row gap-5">
           <a href="https://docs.screenie.host/get-started/installation" target="_blank" class="btn btn-soft btn-accent text-base-content">Install Guide</a>
           <a href="https://discord.com/invite/tsRDJTARnS" target="_blank" class="btn btn-soft btn-primary text-base-content">Discord</a>
           <a href="https://github.com/screeniehost/screenie" target="_blank" class="btn btn-soft btn-default text-base-content">GitHub <div class="badge badge-sm badge-neutral"><span class="stargazers"></span>⭐</div></a>
         </div>
       </div>
-        <div class="order-1 md:order-2 p-4 rounded-lg flex justify-center">
-          <div class="aspect-w-16">
-            <img src="./assets/logo.png" class="rounded-lg floating" width="400px">
-          </div>
+      <div class="order-1 md:order-2 p-4 rounded-lg flex justify-center" id="hero-image">
+        <div class="aspect-w-16">
+          <img src="./assets/logo.png" class="rounded-lg floating" width="400px">
         </div>
       </div>
     </div>
+  </div>
+  <hr class="mx-20 my-30">
+  <div class="container mx-auto p-4 min-h-screen flex flex-col items-center justify-center" id="install">
+    <div class="p-4 rounded-lg w-full md:w-3/4 flex flex-col items-center text-center">
+      <h2 class="text-5xl font-bold mb-4 break-words">it's that <span class="bg-gradient-to-r from-[#74ebd5] to-[#acb6e5] bg-clip-text text-transparent">simple.</span></h2>
+      <div class="container my-5 flex justify-center">
+        <div class="mockup-code w-110 overflow-hidden">
+          <pre data-prefix="$"><code class="line-through text-white/50">curl -sSL https://screenie.host/install.sh | sh</code></pre>
+        </div>
+      </div>
+      <div role="alert" class="alert">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="stroke-info h-6 w-6 shrink-0">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
+        <span>currently this feature is work in progress, stay tuned..</span>
+      </div>
+      <div class="mt-8 flex flex-col lg:flex-row gap-5">
+        <a href="https://docs.screenie.host" target="_blank" class="btn btn-soft btn-accent text-base-content">Documentation</a>
+        <a href="https://discord.com/invite/tsRDJTARnS" target="_blank" class="btn btn-soft btn-primary text-base-content">Discord</a>
+        <a href="https://github.com/screeniehost/screenie" target="_blank" class="btn btn-soft btn-default text-base-content">GitHub <div class="badge badge-sm badge-neutral"><span class="stargazers"></span>⭐</div></a>
+      </div>
+    </div>
+  </div>
+  <div class="container mx-auto p-4">
+    <footer class="footer footer-horizontal footer-center bg-base-300 text-primary-content p-10 rounded-xl">
+      <aside>
+        <img src="./assets/logo.png" class="w-20">
+        <p class="font-bold">
+          screenie
+          <br />
+          sharing your screenshots and videos easily
+        </p>
+        <p>Copyright © <span class="currentYear"></span> - All right reserved</p>
+      </aside>
+      <nav>
+        <div class="grid grid-flow-col gap-4">
+          <a href="https://github.com/screeniehost" target="_blank" class="btn btn-ghost"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+          </svg></a>
+          <a href="https://discord.com/invite/tsRDJTARnS" target="_blank" class="btn btn-ghost"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-discord" viewBox="0 0 16 16">
+            <path d="M13.545 2.907a13.2 13.2 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.2 12.2 0 0 0-3.658 0 8 8 0 0 0-.412-.833.05.05 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.04.04 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032q.003.022.021.037a13.3 13.3 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019q.463-.63.818-1.329a.05.05 0 0 0-.01-.059l-.018-.011a9 9 0 0 1-1.248-.595.05.05 0 0 1-.02-.066l.015-.019q.127-.095.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.05.05 0 0 1 .053.007q.121.1.248.195a.05.05 0 0 1-.004.085 8 8 0 0 1-1.249.594.05.05 0 0 0-.03.03.05.05 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.2 13.2 0 0 0 4.001-2.02.05.05 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.03.03 0 0 0-.02-.019m-8.198 7.307c-.789 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612m5.316 0c-.788 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612"/>
+          </svg></a>
+        </div>
+      </nav>
+    </footer>
   </div>
 </body>
 <script src="./assets/jquery-3.7.1.min.js"></script>

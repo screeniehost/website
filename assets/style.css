@@ -18,3 +18,8 @@
         translate: 0 0;
     }
 }
+
+/* scrollreveal */
+html.sr .load-hidden {
+    visibility: hidden;
+}
