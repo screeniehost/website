@@ -1,10 +1,12 @@
-# screenie | website under construction
+# screenie | main website
 
-this website is currently under construction and will be released soon. we are working hard to bring you the best experience possible. stay tuned for updates!
+this webpage describes in short words the features of our app.
 
-in the meantime, you can check our socials:
 
 - [our community discord](https://discord.gg/tsRDJTARnS)
-- [our github organization](https://github.com/screeniehost)
+- [our documentation page](https://docs.screenie.host)
+
+animations are made with [scrollreveal](https://scrollrevealjs.org/)
+text typing animations are made with [typed.js](https://github.com/mattboldt/typed.js)
 
 thank you for your patience and support!
