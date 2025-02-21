@@ -1,0 +1,3 @@
+# redirecting to latest version on the main repo
+RewriteEngine On
+RewriteRule ^install.sh$ https://raw.githubusercontent.com/screeniehost/screenie/main/install.sh [L,R=301]
