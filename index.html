@@ -31,6 +31,7 @@
         </div>
       </div>
   </div>
+  <!-- first screen HOME -->
   <div class="container mx-auto p-4 min-h-screen flex items-center justify-center">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
       <div class="order-2 md:order-1 p-4 rounded-lg md:w-3/4 mx-auto flex flex-col items-center md:items-start text-center md:text-left" id="hero-text">
@@ -50,9 +51,26 @@
     </div>
   </div>
   <hr class="mx-20 my-30">
+  <!-- second screen mockups -->
+  <div class="container mx-auto p-4 min-h-screen flex items-center justify-center">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="order-1 md:order-2 p-4 rounded-lg md:w-3/4 mx-auto flex flex-col items-center md:items-start text-center md:text-left" id="mockup-text">
+        <h2 class="text-7xl sm:text-5xl font-bold mb-4 break-words drop-shadow-xl">you upload,</h2>
+        <h2 class="text-7xl sm:text-5xl font-bold mb-4 bg-gradient-to-r from-[#74ebd5] to-[#acb6e5] bg-clip-text text-transparent break-words drop-shadow-xl">we host.</h2>
+        <p class="text-4xl sm:text-2xl font-bold mb-4 text-base-content/75 break-words">Compatible with ShareX, Sharenix, and more..!</p>
+      </div>
+      <div class="order-2 md:order-1 p-4 rounded-lg flex justify-center" id="mockup-image">
+        <div class="aspect-w-16">
+          <img src="./assets/logo.png" class="rounded-lg floating" width="400px">
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr class="mx-20 my-30">
+  <!-- third screen install -->
   <div class="container mx-auto p-4 min-h-screen flex flex-col items-center justify-center" id="install">
     <div class="p-4 rounded-lg w-full md:w-3/4 flex flex-col items-center text-center">
-      <h2 class="text-5xl font-bold mb-4 break-words">it's that <span class="bg-gradient-to-r from-[#74ebd5] to-[#acb6e5] bg-clip-text text-transparent">simple.</span></h2>
+      <h2 class="text-5xl font-bold mb-4 break-words">it's that <span class="bg-gradient-to-l from-[#74ebd5] to-[#acb6e5] bg-clip-text text-transparent">simple.</span></h2>
       <div class="container my-5 flex justify-center">
         <div class="mockup-code w-110 overflow-hidden">
           <pre data-prefix="$"><code class="line-through text-white/50">curl -sSL https://screenie.host/install.sh | sh</code></pre>
@@ -62,13 +80,40 @@
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="stroke-info h-6 w-6 shrink-0">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
         </svg>
-        <span>currently this feature is work in progress, stay tuned..</span>
+        <span>currently this feature is in progress, check our <a href="https://docs.screenie.host/" class="underline underline-offset-4" target="_blank">docs page</a> for the other install methods..</span>
       </div>
-      <div class="mt-8 flex flex-col lg:flex-row gap-5">
+      <!-- <div class="mt-8 flex flex-col lg:flex-row gap-5">
         <a href="https://docs.screenie.host" target="_blank" class="btn btn-soft btn-accent text-base-content">Documentation</a>
         <a href="https://discord.com/invite/tsRDJTARnS" target="_blank" class="btn btn-soft btn-primary text-base-content">Discord</a>
         <a href="https://github.com/screeniehost/screenie" target="_blank" class="btn btn-soft btn-default text-base-content">GitHub <div class="badge badge-sm badge-neutral"><span class="stargazers"></span>⭐</div></a>
+      </div> -->
+    </div>
+  </div>
+  <hr class="mx-20 my-30">
+  <!-- discord -->
+  <div class="container mx-auto p-4 min-h-screen flex flex-col items-center justify-center" id="discord">
+    <div class="p-4 rounded-lg w-full md:w-3/4 flex flex-col items-center text-center">
+      <h2 class="text-5xl font-bold mb-4 break-words">having some <span class="bg-gradient-to-r from-[#74ebd5] to-[#acb6e5] bg-clip-text text-transparent">trouble?</span></h2>
+      <p class="text-4xl sm:text-2xl font-bold mb-4 text-base-content/50 break-words">check our Discord server for help from us and the community</p>
+      <div class="container flex my-10 justify-center">
+        <!-- <img src="./assets/macbook_mockup.png" class="aspect-w-16 w-200" id="macbook_mockup_discord"> -->
+      
+        <div class="mockup-browser border border-base-300 w-full">
+          <div class="mockup-browser-toolbar">
+            <div class="input">https://daisyui.com</div>
+          </div>
+          <div class="grid place-content-center h-80">Hello!</div>
+        </div>
+
       </div>
+      <div class="container my-5">
+        <a href="https://discord.com/invite/tsRDJTARnS" target="_blank" class="btn btn-soft btn-primary text-base-content">join our community</a>
+      </div>
+      <!-- <div class="mt-8 flex flex-col lg:flex-row gap-5">
+        <a href="https://docs.screenie.host" target="_blank" class="btn btn-soft btn-accent text-base-content">Documentation</a>
+        <a href="https://discord.com/invite/tsRDJTARnS" target="_blank" class="btn btn-soft btn-primary text-base-content">Discord</a>
+        <a href="https://github.com/screeniehost/screenie" target="_blank" class="btn btn-soft btn-default text-base-content">GitHub <div class="badge badge-sm badge-neutral"><span class="stargazers"></span>⭐</div></a>
+      </div> -->
     </div>
   </div>
   <div class="container mx-auto p-4">

@@ -24,8 +24,19 @@ $(document).ready(function() {
 
 // animations
 ScrollReveal({ distance: '15px', reset: true });
-ScrollReveal().reveal('.navbar', { delay: 100, duration: 500, origin: 'top' });
-ScrollReveal().reveal('#hero-image', { delay: 400, duration: 500, origin: 'right' });
-ScrollReveal().reveal('#hero-text', { delay: 700, duration: 800, origin: 'left' });
-ScrollReveal().reveal('#install', { delay: 300, duration: 500, scale: 0 });
-ScrollReveal().reveal('.footer', { delay: 100, duration: 500, origin: 'bottom' });
+
+const scrollRevealConfigs = [
+    { selector: '.navbar', options: { delay: 100, duration: 500, origin: 'top' } },
+    { selector: '#hero-image', options: { delay: 400, duration: 500, origin: 'right' } },
+    { selector: '#hero-text', options: { delay: 700, duration: 800, origin: 'left' } },
+    { selector: '#mockup-image', options: { delay: 400, duration: 500, scale: 0.2 } },
+    { selector: '#mockup-text', options: { delay: 700, duration: 1200, origin: 'right' } },
+    { selector: '#install', options: { delay: 300, duration: 500, scale: 0 } },
+    { selector: '#discord', options: { delay: 300, duration: 500, origin: 'bottom' } },
+    { selector: '#macbook_mockup_discord', options: { delay: 800, duration: 500 } },
+    { selector: '.footer', options: { delay: 100, duration: 500, origin: 'bottom' } }
+];
+
+scrollRevealConfigs.forEach(config => {
+    ScrollReveal().reveal(config.selector, config.options);
+});
